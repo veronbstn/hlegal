@@ -1,0 +1,55 @@
+@use '../../common/variables' as *;
+@use 'sass:map';
+
+.clients {
+  padding: 64px 0;
+
+  .row {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+
+    &__title {
+      color: map-get($colors, 'accent-color');
+      font-weight: map-get($font-weights, 'bold');
+    }
+  }
+
+  .col-6, .col-md-4, .col-lg-3 {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .rounded-left-top a {
+    border-top-left-radius: 12px;
+  }
+
+  .rounded-right-top a {
+    border-top-right-radius: 12px;
+  }
+
+  .rounded-left-bottom a {
+    border-bottom-left-radius: 12px;
+  }
+
+  .rounded-right-bottom a {
+    border-bottom-right-radius: 12px;
+  }
+}

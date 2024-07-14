@@ -1,0 +1,42 @@
+$main-font-family: 'Montserrat', sans-serif;
+$base-fonts-path: './../../fonts/';
+$base-assets-path: './../../assets/';
+
+$font-sizes: (
+        "xxl": 36px,
+        "xl": 30px,
+        "lg": 24px,
+        "md": 19px,
+        "sm": 16px,
+        "xs": 14px,
+        "fs20": 21px,
+        "fs12": 12px,
+        "fs36": 36px,
+);
+
+$colors: (
+        "accent-color": #F0145A,
+        "accent-gradient": linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%),
+        "supersoft-accent-gradient": linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%),
+        "title-gradient": linear-gradient(62deg, #F0145A 0.84%, #EF8080 99.96%),
+        "white": #FFFFFF,
+        "gray": #B3B3BA,
+        "blue": #24A3FF,
+        "dark-blue": #323264,
+        "dark-gray": #46466E,
+        "gray-bg": #F5F5FA,
+        "light-gray": #E6E6F0,
+        "black": #242424,
+);
+
+$font-weights: (
+        "thin": 100,
+        "extra-light": 200,
+        "light": 300,
+        "normal": 400,
+        "medium": 500,
+        "semi-bold": 600,
+        "bold": 700,
+        "extra-bold": 800,
+        "black": 900,
+);

@@ -1,0 +1,134 @@
+@use '../../common/variables' as *;
+@use '../../common/mixins' as *;
+@use 'sass:map';
+
+.header {
+  padding-top: 5px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  .container {
+    position: relative;
+    padding: 0;
+  }
+
+  .navbar-brand {
+    position: relative;
+    z-index: 1;
+  }
+
+  .navbar-nav {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+
+    .nav-item a {
+      font-size: map-get($font-sizes, 'sm');
+      color: map-get($colors, 'white');
+      font-weight: map-get($font-weights, 'bold');
+      padding: 0;
+      transition: background-color 0.3s;
+
+      &:hover {
+        @include text-gradient(map-get($colors, 'accent-gradient'));
+      }
+    }
+
+  }
+
+  &__top {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
+
+  &__lang-switcher {
+    input {
+      display: none;
+    }
+
+    span {
+      cursor: pointer;
+      font-size: map-get($font-sizes, 'fs12');
+      line-height: map-get($font-sizes, 'sm');
+      font-weight: map-get($font-weights, 'bold');
+      color: map-get($colors, 'white');
+      display: inline-block;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+
+    input:checked + span {
+      background: map-get($colors, 'accent-color');
+    }
+  }
+
+  &__address a, &__contact a, &__socials a {
+    text-decoration: none;
+    color: map-get($colors, 'white');
+    font-size: map-get($font-sizes, 'sm');
+    transition: background-color 0.3s;
+
+    &:hover {
+      color: map-get($colors, 'accent-color');
+    }
+  }
+
+  &__contact a {
+    font-weight: map-get($font-weights, 'bold');
+  }
+
+  &__dot-after:after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: map-get($colors, 'white');
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 6px;
+  }
+
+  .list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .header__socials {
+    margin: 0;
+    padding: 0;
+
+    .bi-facebook {
+      font-size: map-get($font-sizes, 'lg');
+    }
+  }
+}
+
+.navbar-toggler {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  .bi-list {
+    font-size: map-get($font-sizes, 'xl');
+    color: map-get($colors, 'white');
+  }
+
+  .navbar-toggler {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    outline: none;
+
+    .bi-list {
+      font-size: map-get($font-sizes, 'xl');
+      color: map-get($colors, 'white');
+    }
+  }
+
+}

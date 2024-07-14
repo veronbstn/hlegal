@@ -1,0 +1,49 @@
+@use '../../common/variables' as *;
+@use 'sass:map';
+
+.hero {
+  height: 100vh;
+  min-height: 400px;
+  max-height: 1200px;
+  background-image: url($base-assets-path + 'images/svg/h.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+  margin-bottom: 64px;
+
+  &__title, h1 {
+    font-size: map-get($font-sizes, 'xxl');
+    font-weight: map-get($font-weights, 'bold');
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 32px;
+    width: 100%;
+
+    a {
+      display: inline-block;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid map-get($colors, 'white');
+      color: map-get($colors, 'white');
+      font-size: map-get($font-sizes, 'lg');
+      position: relative;
+      transition: background-color 0.3s;
+
+      &:hover {
+        color: map-get($colors, 'accent-color');
+        border: 1px solid map-get($colors, 'accent-color');
+      }
+
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -44%);
+      }
+    }
+  }
+}

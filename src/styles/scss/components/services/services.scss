@@ -1,0 +1,46 @@
+@use '../../common/variables' as *;
+@use 'sass:map';
+
+.services {
+  padding-bottom: 64px;
+
+  .row {
+    row-gap: 64px;
+  }
+
+  .section-header {
+    margin-bottom: 64px;
+  }
+
+
+  &__icon {
+    background-color: map-get($colors, 'white');
+    padding: 14px;
+    border-radius: 24px;
+    display: inline-block;
+    margin-bottom: 32px;
+
+    img {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  &__title  {
+    margin-bottom: 16px;
+
+    h6 {
+      font-weight: map-get($font-weights, 'bold');
+      font-size: map-get($font-sizes, 'lg');
+      color: map-get($colors, 'blue');
+      margin: 0;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__description {
+    font-size: map-get($font-sizes, 'sm');
+    line-height: 26px;
+  }
+
+}

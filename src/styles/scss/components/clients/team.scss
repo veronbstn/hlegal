@@ -1,0 +1,61 @@
+@use '../../common/variables' as *;
+@use 'sass:map';
+
+.team {
+  padding-top: 64px;
+  margin-bottom: 104px;
+
+  $min-height: 300px;
+  $photo-width: 400px;
+
+  &__member {
+    min-height: $min-height;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: map-get($colors, 'gray-bg');
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+
+  &__photo {
+    width: $photo-width;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: $min-height;
+  }
+
+  &__text {
+    width: calc(100% - $photo-width);
+    padding: 32px;
+  }
+
+
+  &__info, &__role {
+    color: map-get($colors, 'gray');
+    font-size: map-get($font-sizes, 'xs');
+  }
+
+  &__info {
+    font-weight: map-get($font-weights, 'bold');
+    margin-bottom: 8px;
+  }
+
+
+  .carousel-indicators {
+    margin: 0;
+    bottom: -48px;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 16px;
+    height: 16px;
+    background-color: rgba(map-get($colors, 'blue'), 0.5);
+    border-radius: 50%;
+
+    .active {
+      background-color: map-get($colors, 'blue');
+    }
+  }
+}

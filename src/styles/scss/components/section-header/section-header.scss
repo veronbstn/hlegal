@@ -1,0 +1,30 @@
+@use '../../common/variables' as *;
+@use '../../common/mixins' as *;
+@use 'sass:map';
+
+.section-header {
+  margin-bottom: 32px;
+
+  &__link {
+    text-transform: uppercase;
+    font-weight: map-get($font-weights, 'bold');
+    font-size: map-get($font-sizes, 'xs');
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: map-get($colors, 'blue');
+    margin-bottom: 24px;
+    display: inline-block;
+    transition: 0.3s color;
+
+    &:hover {
+      color: map-get($colors, 'accent-color');
+    }
+  }
+
+  &__title {
+    @include text-gradient(map-get($colors, 'title-gradient'));
+    font-weight: map-get($font-weights, 'bold');
+    font-size: map-get($font-sizes, 'xxl');
+    line-height: map-get($font-sizes, 'xxl');
+  }
+}

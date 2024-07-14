@@ -1,0 +1,40 @@
+@use '../../common/variables' as *;
+@use 'sass:map';
+
+
+.team {
+  @media (max-width: 992px) {
+    &__member {
+      flex-direction: column;
+    }
+
+    &__photo {
+      width: 100%;
+      min-height: 500px;
+    }
+
+    &__text {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &__photo {
+      width: 100%;
+      min-height: 500px;
+    }
+
+    &__text {
+      padding: 16px;
+    }
+
+    .carousel-indicators {
+      bottom: -56px;
+    }
+
+    .carousel-indicators [data-bs-target] {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

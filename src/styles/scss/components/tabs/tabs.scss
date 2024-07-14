@@ -1,0 +1,68 @@
+@use '../../common/variables' as *;
+@use '../../common/mixins' as *;
+@use 'sass:map';
+
+.tabs {
+  margin-bottom: 64px;
+
+  &__controls {
+    $controls_base_width: 375px;
+    $controls-offset: 64px;
+    $vertical-line-width: 4px;
+
+    min-width: calc($controls-base-width + $controls-offset + $vertical-line-width);
+    max-width: calc($controls-base-width + $controls-offset + $vertical-line-width);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: $vertical-line-width;
+      height: 100%;
+      background-color: rgba(map-get($colors, 'white'), 0.3);
+      position: absolute;
+      right: 0;
+    }
+
+    &-single {
+      display: inline-block;
+      max-width: $controls-base-width;
+      font-weight: map-get($font-weights, 'bold');
+      font-size: map-get($font-sizes, 'fs36');
+      color: map-get($colors, 'gray');
+      line-height: 46px;
+      text-align: right;
+      transition: 0.3s color;
+
+      &.active {
+        @include text-gradient(map-get($colors, 'accent-gradient'));
+      }
+
+      &:hover {
+        color: (map-get($colors, 'white'));
+      }
+    }
+  }
+
+  &__content {
+    padding-left: 64px;
+
+    &-title {
+      font-weight: map-get($font-weights, 'bold');
+      font-size: map-get($font-sizes, 'xl');
+      margin-bottom: 32px;
+    }
+
+    &-info {
+      font-size: map-get($font-sizes, 'md');
+    }
+
+    h4 {
+      font-size: map-get($font-sizes, 'lg');
+    }
+
+  }
+}

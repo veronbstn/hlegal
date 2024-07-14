@@ -1,0 +1,47 @@
+@use '../../common/variables' as *;
+@use 'sass:map';
+
+.header {
+
+  @media (max-width: 767px) {
+    &__top {
+      top: -40px;
+      justify-content: center!important;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding-top: 60px;
+
+    .navbar-collapse {
+      background-color: map-get($colors, 'dark-blue');
+      width: 100%;
+      padding: 16px;
+      margin-top: 8px;
+      border-radius: 8px;
+
+      .navbar-nav {
+        margin: 0;
+      }
+    }
+    .container {
+      padding: 0 16px;
+    }
+
+    &__address, &__socials {
+      display: none!important;
+    }
+
+    &__dot-after:after {
+      display: none;
+    }
+
+    &__top {
+      top: -60px;
+      left: 0;
+      padding: 10px 16px;
+      background-color: rgba(map-get($colors, 'white'), 0.3);
+      justify-content: space-between!important;
+    }
+  }
+}

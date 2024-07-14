@@ -1,0 +1,62 @@
+@use '../../common/variables' as *;
+@use 'sass:map';
+
+.publications {
+  padding: 64px 0;
+  background-color: map-get($colors, 'gray-bg');
+
+  .card {
+    border-radius: 12px;
+    border: none;
+    overflow: hidden;
+    transition: 0.3s box-shadow, 0.3s transform;
+    cursor: pointer;
+    background-color: map-get($colors, 'white');
+    height: 100%;
+
+    &:hover {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+    }
+
+    &-body {
+      padding: 32px;
+    }
+
+    .publications__img-wrapper {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      min-height: 200px;
+      height: 200px;
+    }
+
+    h4 {
+      font-size: map-get($font-sizes, 'sm');
+      font-weight: map-get($font-weights, 'bold');
+      line-height: 19px;
+      color: map-get($colors, 'blue');
+      margin-bottom: 16px;
+    }
+
+    .publications__date {
+      font-size: map-get($font-sizes, 'fs12');
+      font-weight: map-get($font-weights, 'bold');
+      color: map-get($colors, 'gray');
+      text-transform: uppercase;
+    }
+
+    hr {
+      border-width: 4px;
+      margin: 16px 0;
+      border-color: map-get($colors, 'light-gray');
+      opacity: 1;
+    }
+
+    .publications__text {
+      color: map-get($colors, 'black');
+      font-size: map-get($font-sizes, 'xs');
+      line-height: 22px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use '../../common/variables' as *;
+@use 'sass:map';
+
+.hero {
+  @media (max-width: 576px) {
+    &__title, h1 {
+      font-size: map-get($font-sizes, 'xxl');
+      padding: 16px;
+    }
+  }
+}

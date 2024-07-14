@@ -1,0 +1,15 @@
+@use '../../common/variables' as *;
+@use 'sass:map';
+
+.clients {
+
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
+
+  @media (max-width: 576px) {
+    &__title, h3 {
+      font-size: map-get($font-sizes, 'xl');
+    }
+  }
+}
